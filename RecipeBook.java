@@ -9,51 +9,58 @@ public class RecipeBook {
         //TODO read text file and load all current recipes
 
         int chosenOption = 0;
+        boolean continueProgram = true;
 
-        //TODO create separate method for menu options
+        displayMenu();
+
+        chosenOption = _scanner.nextInt();
+
+        while (continueProgram) {
+
+            //TODO place switch statement in separate method
+            switch (chosenOption) {
+
+                case 1: {
+                    System.out.println("\nHere are all your recipes:");
+                    //TODO print out all recipes in alphabetical order
+                    break;
+                }
+                case 2: {
+                    System.out.println("\nSelect a Category to Search:");
+                    //TODO print out all categories
+                    //TODO allow for sub-search based on category
+                    break;
+                }
+                case 3: {
+                    System.out.println("\nWhat Category is your New Recipe?");
+                    //TODO walk user through adding a new recipe and store it
+                    break;
+                }
+                case 4: {
+                    System.out.print("\nPlease provide the Recipe ID to be removed:");
+                    //TODO collect a RecipeID and remove the indicated recipe if exists
+                    break;
+                }
+                case 5: {
+                    System.out.println("\nPleasure working with you today. Bon Appetit!");
+                    //TODO Save current recipe book to text file then close program.
+                    break;
+                }
+            }
+        }
+    }
+
+    \\This method displays all the available Menu options
+    private static void displayMenu() {
+
         System.out.println("Welcome to Your Recipe Book!");
         System.out.println("----------------------------");
-        System.out.println("\nWhat would you like to do today?\n");
         System.out.println("1. List All Recipes");
         System.out.println("2. Search by Category");
         System.out.println("3. Add Recipe");
         System.out.println("4. Remove Recipe");
         System.out.println("5. Exit");
-
-        //TODO add While loop to keep program running until user selects EXIT
-
-        chosenOption = _scanner.nextInt();
-
-        //TODO place switch statement in separate method
-        switch (chosenOption) {
-
-            case 1: {
-                System.out.println("\nHere are all your recipes:");
-                //TODO print out all recipes in alphabetical order
-                break;
-            }
-            case 2: {
-                System.out.println("\nSelect a Category to Search:");
-                //TODO print out all categories
-                //TODO allow for sub-search based on category
-                break;
-            }
-            case 3: {
-                System.out.println("\nWhat Category is your New Recipe?");
-                //TODO walk user through adding a new recipe and store it
-                break;
-            }
-            case 4: {
-                System.out.print("\nPlease provide the Recipe ID to be removed:");
-                //TODO collect a RecipeID and remove the indicated recipe if exists
-                break;
-            }
-            case 5: {
-                System.out.println("\nPleasure working with you today. Bon Appetit!");
-                //TODO Save current recipe book to text file then close program.
-                break;
-            }
-        }
+        System.out.print("\nWhat would you like to do today? ");
     }
 }
 
